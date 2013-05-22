@@ -1,18 +1,13 @@
-﻿Build started 22/05/2013 2:41:12 p.m..
-     1>Project "C:\Users\Ryan\Dropbox\Projects\VS\gameProject\gameProject\gameProject.vcxproj" on node 2 (Build target(s)).
-     1>Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ryan\Dropbox\Projects\VS\gameProject\Debug\gameProject.exe" /INCREMENTAL /NOLOGO SDL.lib SDLmain.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ryan\Dropbox\Projects\VS\gameProject\Debug\gameProject.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ryan\Dropbox\Projects\VS\gameProject\Debug\gameProject.lib" /MACHINE:X86 Debug\GameProject.obj
-     1>GameProject.obj : error LNK2019: unresolved external symbol _SDL_SetVideoMode referenced in function _SDL_main
-     1>GameProject.obj : error LNK2019: unresolved external symbol _SDL_Flip referenced in function _SDL_main
-     1>GameProject.obj : error LNK2019: unresolved external symbol _SDL_FillRect referenced in function _SDL_main
-     1>GameProject.obj : error LNK2019: unresolved external symbol _SDL_WM_SetCaption referenced in function _SDL_main
-     1>GameProject.obj : error LNK2019: unresolved external symbol _SDL_Delay referenced in function _SDL_main
-     1>GameProject.obj : error LNK2019: unresolved external symbol _SDL_Init referenced in function _SDL_main
-     1>GameProject.obj : error LNK2019: unresolved external symbol _SDL_Quit referenced in function _SDL_main
-     1>MSVCRT.lib(crtexew.obj) : error LNK2019: unresolved external symbol _WinMain@16 referenced in function ___tmainCRTStartup
-     1>C:\Users\Ryan\Dropbox\Projects\VS\gameProject\Debug\gameProject.exe : fatal error LNK1120: 8 unresolved externals
-     1>Done Building Project "C:\Users\Ryan\Dropbox\Projects\VS\gameProject\gameProject\gameProject.vcxproj" (Build target(s)) -- FAILED.
+﻿Build started 22/05/2013 3:40:49 p.m..
+     1>Project "C:\Users\Ryan\Documents\GitHub\gameProject\gameProject\gameProject\gameProject.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt GameProject.cpp
+         GameProject.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ryan\Documents\GitHub\gameProject\gameProject\Debug\gameProject.exe" /INCREMENTAL /NOLOGO SDL.lib SDLmain.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ryan\Documents\GitHub\gameProject\gameProject\Debug\gameProject.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ryan\Documents\GitHub\gameProject\gameProject\Debug\gameProject.lib" /MACHINE:X86 Debug\GameProject.obj
+         gameProject.vcxproj -> C:\Users\Ryan\Documents\GitHub\gameProject\gameProject\Debug\gameProject.exe
+     1>Done Building Project "C:\Users\Ryan\Documents\GitHub\gameProject\gameProject\gameProject\gameProject.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.19
+Time Elapsed 00:00:00.41
