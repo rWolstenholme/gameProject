@@ -19,4 +19,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\goldWall.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\Sprites\grassDirt.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\Sprites\partialRobot.png">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>

@@ -1,15 +1,12 @@
-﻿Build started 22/05/2013 8:30:13 p.m..
+﻿Build started 23/05/2013 8:28:49 p.m..
      1>Project "C:\Users\Garming\Documents\GitHub\gameProject\gameProject\gameProject\gameProject.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\gameProject.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt GameProject.cpp
-         GameProject.cpp
+         All outputs are up-to-date.
        Link:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Garming\Documents\GitHub\gameProject\gameProject\Debug\gameProject.exe" /NOLOGO SDL.lib SDLmain.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\gameProject.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Garming\Documents\GitHub\gameProject\gameProject\Debug\gameProject.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Garming\Documents\GitHub\gameProject\gameProject\Debug\gameProject.lib" /MACHINE:X86 Debug\GameProject.obj
+         All outputs are up-to-date.
          gameProject.vcxproj -> C:\Users\Garming\Documents\GitHub\gameProject\gameProject\Debug\gameProject.exe
-       Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Garming\Documents\GitHub\gameProject\gameProject\Debug\gameProject.exe;#1" /manifest Debug\gameProject.exe.intermediate.manifest
        FinalizeBuildStatus:
          Deleting file "Debug\gameProject.unsuccessfulbuild".
          Touching "Debug\gameProject.lastbuildstate".
@@ -17,4 +14,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.39
+Time Elapsed 00:00:00.04

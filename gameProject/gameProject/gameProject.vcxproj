@@ -13,6 +13,13 @@
   <ItemGroup>
     <ClCompile Include="GameProject.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\goldWall.png" />
+    <None Include="Resources\Sprites\grassDirt.png" />
+    <None Include="Resources\Sprites\partialRobot.png">
+      <DeploymentContent>false</DeploymentContent>
+    </None>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{60432763-9CB4-47CF-90D1-CB8B7B0891B4}</ProjectGuid>
     <RootNamespace>gameProject</RootNamespace>
