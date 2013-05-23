@@ -1,8 +1,19 @@
 #include "SDL.h"
 #include "SDL_image.h"
+#include "defs.h"
+
+
+typedef struct Map  
+{  
+    int tile[_maxX][_maxY];  
+} Map;
 
 int main(int argc, char *argv[])
 {
+	Map level;
+	for(int i=0;i<_maxX;i++){
+		level.tile[i][20]=1;
+	}
 
 	SDL_Surface *screen;
 
@@ -28,9 +39,21 @@ int main(int argc, char *argv[])
 		SDL_SetColors(screen, image->format->palette->colors, 0,
 			image->format->palette->ncolors);
 	}
-	if(SDL_BlitSurface(image, NULL, screen, NULL) < 0)
-		fprintf(stderr, "BlitSurface error: %s\n", SDL_GetError());
-	SDL_UpdateRect(screen, 0, 0, image->w, image->h);
+
+	for(int x = 0; x<_maxX; x++){
+		for(int y = 0; y<_maxY; y++){
+			if(level.tile[x][y]==1){
+				SDL_Rect pos;
+				pos.x=x*_tileSize;
+				pos.y=y*_tileSize;
+				SDL_Rect *posP = &pos;
+				if(SDL_BlitSurface(image, NULL, screen, posP) < 0){
+					fprintf(stderr, "BlitSurface error: %s\n", SDL_GetError());
+				}
+			}
+			SDL_UpdateRect(screen, _maxX*_tileSize, _maxY*_tileSize, image->w, image->h);
+		}
+	}
 
 	SDL_Flip(screen);
 
