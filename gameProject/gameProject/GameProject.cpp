@@ -10,9 +10,9 @@ typedef struct Map
 
 int main(int argc, char *argv[])
 {
-	Map level;
+	Map *level = new Map;
 	for(int i=0;i<_maxX;i++){
-		level.tile[i][20]=1;
+		level->tile[i][20]=1;
 	}
 
 	SDL_Surface *screen;
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 
 	for(int x = 0; x<_maxX; x++){
 		for(int y = 0; y<_maxY; y++){
-			if(level.tile[x][y]==1){
+			if(level->tile[x][y]==1){
 				SDL_Rect pos;
 				pos.x=x*_tileSize;
 				pos.y=y*_tileSize;
