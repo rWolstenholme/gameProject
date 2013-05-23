@@ -85,12 +85,12 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
-        <!---
+        <!--
       <PostBuildEvent>
       <Command>calc</Command>
       </PostBuildEvent>
       Feel free to arbitrarily execute commands after building. 
-         --->
+         -->
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
