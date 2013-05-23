@@ -57,7 +57,17 @@ int main(int argc, char *argv[])
 
 	SDL_Flip(screen);
 
-	SDL_Delay( 5000 );
-
+	SDL_Event event;
+	bool gameRunning = true;
+	while (gameRunning)
+	{
+		if (SDL_WaitEvent(&event))
+		{
+			if (event.type == SDL_QUIT)
+			{
+				gameRunning = false;
+			}} 
+	}
+	SDL_Quit();
 	return 0;
 }
