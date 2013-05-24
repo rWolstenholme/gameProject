@@ -1,7 +1,9 @@
 #include "SDL.h"
 #include "SDL_image.h"
 #include "defs.h"
-
+#define FRAMES_PER_SECOND 60
+#include <iostream>
+#include <string>
 
 typedef struct Map  
 {  
@@ -59,14 +61,26 @@ int main(int argc, char *argv[])
 
 	SDL_Event event;
 	bool gameRunning = true;
+	int start = SDL_GetTicks();
+	//int start2 = start;
+	//long long int numFrames = 0;
 	while (gameRunning)
 	{
-		if (SDL_WaitEvent(&event))
+		//numFrames++;
+		while( SDL_PollEvent( &event ) )
 		{
 			if (event.type == SDL_QUIT)
 			{
 				gameRunning = false;
-			}} 
+			}
+		} 
+		int diff = SDL_GetTicks() - start;
+		if(diff < 1000 / FRAMES_PER_SECOND ) { 
+			//Sleep the remaining frame time 
+			SDL_Delay( ( 1000 / FRAMES_PER_SECOND ) - diff); 
+		}
+		start = SDL_GetTicks();
+		//std::cout << (int)(( numFrames/(float)(SDL_GetTicks() - start2) )*1000) << "\n"; //Apparently gets 62 FPS, so pretty close.
 	}
 	SDL_Quit();
 	return 0;
