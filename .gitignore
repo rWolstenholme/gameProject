@@ -13,3 +13,6 @@
 *.a
 
 gameProject/gameProject/Debug/
+gameProject/Debug/gameProject.exe
+gameProject/Debug/gameProject.ilk
+gameProject/Debug/gameProject.pdb
