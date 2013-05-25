@@ -13,7 +13,7 @@ CharSprite::CharSprite(char* fileLocation, int x, int y)
 
 CharSprite::~CharSprite(void)
 {
-	free(sprite);
+	SDL_FreeSurface(sprite);
 }
 
 int CharSprite::drawSprite(SDL_Surface* screen, int x, int y) {
