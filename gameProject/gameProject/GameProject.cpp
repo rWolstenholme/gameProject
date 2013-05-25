@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 {
 	Map *level = new Map;
 	for(int i=0;i<_maxX;i++){
-		level->tile[i][20]=1;
+		level->tile[i][19]=1;
 	}
 
 	SDL_Surface *screen;
