@@ -2,12 +2,14 @@
 #include "SDL_image.h"
 #include "defs.h"
 #define FRAMES_PER_SECOND 60
+#define LOCATIONX 100	//Location->x of sprite at start
+#define LOCATIONY 100	//Location->y of sprite at start
 #include <iostream>
 #include <string>
 
 typedef struct Map  
 {  
-    int tile[_maxX][_maxY];  
+	int tile[_maxX][_maxY];  
 } Map;
 
 int main(int argc, char *argv[])
@@ -57,6 +59,19 @@ int main(int argc, char *argv[])
 		}
 	}
 
+	//Attempt at sprite loading.
+	SDL_Surface *sprite = SDL_LoadBMP("Resources/Sprites/ninja.bmp");
+	SDL_SetColorKey(sprite, SDL_SRCCOLORKEY, SDL_MapRGB(sprite->format,255, 0, 255) );	//Set magenta as transparent
+	SDL_Rect source;	//What parts of sprite surface to draw.
+	source.x = 0;
+	source.y = 0;
+	SDL_Rect toDraw;	//Where to draw the sprite.
+	toDraw.x = LOCATIONX;
+	toDraw.y = LOCATIONY;
+	if (SDL_BlitSurface(sprite, &source, screen, &toDraw) < 0) {
+		fprintf(stderr, "BlitSurface error(sprite): %s\n", SDL_GetError());
+	}
+
 	SDL_Flip(screen);
 
 	SDL_Event event;
@@ -67,7 +82,7 @@ int main(int argc, char *argv[])
 	while (gameRunning)
 	{
 		//numFrames++;
-		while( SDL_PollEvent( &event ) )
+		if( SDL_PollEvent( &event ) )
 		{
 			if (event.type == SDL_QUIT)
 			{
