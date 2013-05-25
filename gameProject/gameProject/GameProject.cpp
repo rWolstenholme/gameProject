@@ -2,8 +2,9 @@
 #include "SDL_image.h"
 #include "defs.h"
 #define FRAMES_PER_SECOND 60
-#define LOCATIONX 100	//Location->x of sprite at start
-#define LOCATIONY 100	//Location->y of sprite at start
+#define START_LOCATION_X 100	
+#define START_LOCATION_Y 100	
+#include "CharSprite.h"
 #include <iostream>
 #include <string>
 
@@ -59,16 +60,9 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	//Attempt at sprite loading.
-	SDL_Surface *sprite = SDL_LoadBMP("Resources/Sprites/ninja.bmp");
-	SDL_SetColorKey(sprite, SDL_SRCCOLORKEY, SDL_MapRGB(sprite->format,255, 0, 255) );	//Set magenta as transparent
-	SDL_Rect source;	//What parts of sprite surface to draw.
-	source.x = 0;
-	source.y = 0;
-	SDL_Rect toDraw;	//Where to draw the sprite.
-	toDraw.x = LOCATIONX;
-	toDraw.y = LOCATIONY;
-	if (SDL_BlitSurface(sprite, &source, screen, &toDraw) < 0) {
+	//Attempt at sprite loading, now using a class.
+	CharSprite *mainSprite = new CharSprite("Resources/Sprites/ninja.bmp",0,0);
+	if (mainSprite->drawSprite(screen, START_LOCATION_X, START_LOCATION_Y) < 0) {
 		fprintf(stderr, "BlitSurface error(sprite): %s\n", SDL_GetError());
 	}
 

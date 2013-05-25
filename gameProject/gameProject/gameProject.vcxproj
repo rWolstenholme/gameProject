@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CharSprite.cpp" />
     <ClCompile Include="GameProject.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -21,6 +22,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CharSprite.h" />
     <ClInclude Include="defs.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
@@ -85,7 +87,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
-        <!--
+    <!--
       <PostBuildEvent>
       <Command>calc</Command>
       </PostBuildEvent>
