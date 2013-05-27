@@ -75,14 +75,20 @@ int main(int argc, char *argv[])
 	//long long int numFrames = 0;
 	while (gameRunning)
 	{
+		SDL_FillRect(screen , NULL , 0xABCDEF);
+
 		//numFrames++;
-		if( SDL_PollEvent( &event ) )
+		while( SDL_PollEvent( &event ) )
 		{
 			if (event.type == SDL_QUIT)
 			{
 				gameRunning = false;
 			}
+			mainSprite->updateSprite(event);
 		} 
+
+		mainSprite->drawSprite(screen);
+
 		int diff = SDL_GetTicks() - start;
 		if(diff < 1000 / FRAMES_PER_SECOND ) { 
 			//Sleep the remaining frame time 
@@ -90,6 +96,7 @@ int main(int argc, char *argv[])
 		}
 		start = SDL_GetTicks();
 		//std::cout << (int)(( numFrames/(float)(SDL_GetTicks() - start2) )*1000) << "\n"; //Apparently gets 62 FPS, so pretty close.
+		SDL_Flip(screen);
 	}
 	SDL_Quit();
 	return 0;

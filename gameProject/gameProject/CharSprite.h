@@ -23,5 +23,7 @@ public:
 	*/
 	int drawSprite(SDL_Surface*, int, int);
 	void moveSprite(void); //To Do
+	void updateSprite(SDL_Event);
+	int CharSprite::drawSprite(SDL_Surface*);
 };
 

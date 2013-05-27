@@ -25,5 +25,22 @@ int CharSprite::drawSprite(SDL_Surface* screen, int x, int y) {
 	return SDL_BlitSurface(sprite, &source, screen, &toDraw);
 }
 
+int CharSprite::drawSprite(SDL_Surface* screen) {
+	//Set any magenta in the sprite as transparent
+	SDL_SetColorKey(sprite, SDL_SRCCOLORKEY, SDL_MapRGB(sprite->format,255, 0, 255) );
+	return SDL_BlitSurface(sprite, &source, screen, &toDraw);
+}
+
 
 void moveSprite(void) {}
+
+void CharSprite::updateSprite(SDL_Event e){
+	if(e.type == SDL_KEYUP ) { 
+		switch( e.key.keysym.sym ) { 
+		case SDLK_UP: toDraw.y -= 50; break; 
+		case SDLK_DOWN: toDraw.y += 50; break; 
+		case SDLK_LEFT: toDraw.x -= 50; break; 
+		case SDLK_RIGHT: toDraw.x += 50; break; 
+		} 
+	}
+}
