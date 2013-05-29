@@ -30,7 +30,6 @@ Level::~Level(void)
 bool Level::drawLevel(SDL_Surface* drawTo)
 {
 	for(std::map<SDL_Surface*, std::vector<SDL_Rect*>>::iterator it = images.begin(); it != images.end(); ++it) {
-		//images.begin();
 		SDL_Rect *temp = new SDL_Rect();
 		temp->x = 5;
 		temp->y = 300;
