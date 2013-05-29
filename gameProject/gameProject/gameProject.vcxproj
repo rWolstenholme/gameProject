@@ -13,6 +13,8 @@
   <ItemGroup>
     <ClCompile Include="CharSprite.cpp" />
     <ClCompile Include="GameProject.cpp" />
+    <ClCompile Include="Level.cpp" />
+    <ClCompile Include="Point.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Sprites\goldWall.png" />
@@ -24,6 +26,9 @@
   <ItemGroup>
     <ClInclude Include="CharSprite.h" />
     <ClInclude Include="defs.h" />
+    <ClInclude Include="Header.h" />
+    <ClInclude Include="Level.h" />
+    <ClInclude Include="Point.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
