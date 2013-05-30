@@ -15,6 +15,7 @@
     <ClCompile Include="GameProject.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Point.cpp" />
+    <ClCompile Include="WorldBlock.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Sprites\goldWall.png" />
@@ -30,6 +31,7 @@
     <ClInclude Include="Level.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="WorldBlock.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="gameProject.rc" />

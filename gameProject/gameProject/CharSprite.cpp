@@ -6,8 +6,8 @@ CharSprite::CharSprite(char* fileLocation, int x, int y)
 	sprite = SDL_LoadBMP(fileLocation);
 	source.x = 0;
 	source.y = 0;
-	StartX = x;
-	StartY = y;
+	toDraw.x = x;
+	toDraw.y = y;
 	/*source.w = w;
 	source.h = h;*/
 }

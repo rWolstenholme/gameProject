@@ -1,24 +1,24 @@
 #include "Header.h"
 
-
 Level::Level(char* file)
 {
-	SDL_Surface *image;
-	std::vector<SDL_Rect*> points;
-	//Read given file, to get below.
+	//Read given file, to get the below.
+	//Read player start location.
 	//Store a list of sprites and their starting postions.
-	//Store a Map of images to an arraylist(vector) of SDL_Rect* for world design.
-	//Store a list of world objects, and locations.
+	//Store a Vector of worldblocks.
+	//Store a list of world objects, and their respective locations.
 
-	//Prototype to fake implementation, without reading a file:
+	spriteList.push_back(new CharSprite("Resources/Sprites/ninja.bmp",50,50));
+
+	SDL_Surface *image;
+	image = IMG_Load("Resources/Sprites/grassDirt.png");
 	for(int i=0; i< 10; i ++) {	
-		image = IMG_Load("Resources/Sprites/grassDirt.png");
 		SDL_Rect *temp = new SDL_Rect();
 		temp->x = 50 + (i*_tileSize);
-		temp->y = 300;
-		points.push_back(temp);
+		temp->y = 320;
+		images.push_back(new WorldBlock(image, temp));
 	}
-	images.emplace(image, points);
+
 }
 
 
@@ -29,18 +29,29 @@ Level::~Level(void)
 
 bool Level::drawLevel(SDL_Surface* drawTo)
 {
-	for(std::map<SDL_Surface*, std::vector<SDL_Rect*>>::iterator it = images.begin(); it != images.end(); ++it) {
-		SDL_Rect *temp = new SDL_Rect();
-		temp->x = 5;
-		temp->y = 300;
-		int count = 0;
-		for (int i = 0; i < (int)it->second.size(); ++i) {
-			if(SDL_BlitSurface(it->first, NULL, drawTo, (it->second).at(i)) < 0){
-				fprintf(stderr, "BlitSurface error: %s\n", SDL_GetError());
-				return false;
-			}
-			++count;
+	for (int i = 0; i < images.size(); ++i) {
+		if (SDL_BlitSurface(images.at(i)->getImage(), NULL, drawTo, images.at(i)->getLocation()) < 0){
+			fprintf(stderr, "BlitSurface error(level): %s\n", SDL_GetError());
+			return false;
 		}
 	}
 	return true;
+}
+
+bool Level::drawSprites(SDL_Surface* drawTo) {
+	//Eventually change to a loop that stops upon reaching end of the screen.
+	//i.e to only draw sprites that are able to be seen.
+	for (int i = 0; i < spriteList.size(); ++i) {
+		if (spriteList.at(i)->drawSprite(drawTo) < 0) {
+			fprintf(stderr, "BlitSurface error(sprite): %s\n", SDL_GetError());
+			return false;
+		}
+	}
+	return true;
+}
+
+void Level::updateSprites(SDL_Event e) {
+	for (int i = 0; i < spriteList.size(); ++i) {
+		spriteList.at(i)->updateSprite(e);
+	}
 }

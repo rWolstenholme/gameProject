@@ -19,13 +19,10 @@ int main(int argc, char *argv[])
 
 	//Create Level
 	Level *gameWorld = new Level("FakeFileCurrently");
-	gameWorld->drawLevel(screen);
 
-	//Create Sprite
-	CharSprite *mainSprite = new CharSprite("Resources/Sprites/ninja.bmp",0,0);
-	if (mainSprite->drawSprite(screen, START_LOCATION_X, START_LOCATION_Y) < 0) {
-		fprintf(stderr, "BlitSurface error(sprite): %s\n", SDL_GetError());
-	}
+	//Draw everything
+	gameWorld->drawLevel(screen);
+	gameWorld->drawSprites(screen);
 
 	SDL_Flip(screen);
 
@@ -37,7 +34,7 @@ int main(int argc, char *argv[])
 	while (gameRunning)
 	{
 		SDL_FillRect(screen , NULL , 0xABCDEF);
-
+		
 		//numFrames++;
 		while( SDL_PollEvent( &event ) )
 		{
@@ -45,11 +42,12 @@ int main(int argc, char *argv[])
 			{
 				gameRunning = false;
 			}
-			mainSprite->updateSprite(event);
+			gameWorld->updateSprites(event);
 		} 
+		
 		//Draw everything
 		gameWorld->drawLevel(screen);
-		mainSprite->drawSprite(screen);
+		gameWorld->drawSprites(screen);
 
 		int diff = SDL_GetTicks() - start;
 		if(diff < 1000 / FRAMES_PER_SECOND ) { 
