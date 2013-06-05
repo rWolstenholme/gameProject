@@ -1,15 +1,16 @@
-#include "CharSprite.h"
+#include "Header.h"
 
 
 CharSprite::CharSprite(char* fileLocation, int x, int y)
 {
 	sprite = SDL_LoadBMP(fileLocation);
-	source.x = x;
-	source.y = y;
+	source.x = 0;
+	source.y = 0;
+	toDraw.x = x;
+	toDraw.y = y;
 	/*source.w = w;
 	source.h = h;*/
 }
-
 
 CharSprite::~CharSprite(void)
 {
@@ -31,12 +32,10 @@ int CharSprite::drawSprite(SDL_Surface* screen) {
 	return SDL_BlitSurface(sprite, &source, screen, &toDraw);
 }
 
-
-void moveSprite(void) {}
-
 void CharSprite::updateSprite(bool keysDown[323]){
-	if (keysDown[SDLK_LEFT]){toDraw.x -= 4;right=false;}
-    if (keysDown[SDLK_RIGHT]){toDraw.x += 4;right=true;}
-    if (keysDown[SDLK_UP]){toDraw.y -= 4;}
-    if (keysDown[SDLK_DOWN]){toDraw.y += 4;}
+	if (keysDown[SDLK_LEFT]){toDraw.x -= 4;		right=false;}
+	if (keysDown[SDLK_RIGHT]){toDraw.x += 4;	right=true;}
+	if (keysDown[SDLK_UP]){toDraw.y -= 4;}
+	if (keysDown[SDLK_DOWN]){toDraw.y += 4;}
 }
+

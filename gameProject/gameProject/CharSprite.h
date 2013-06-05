@@ -1,9 +1,10 @@
 #pragma once
-#include "SDL.h"
-#include "SDL_image.h"
+#include "Header.h"
 
 /**
-    Class for Chracter Sprites, available to be drawn and moved around the screen(eventually).
+    Class for Chracter Sprites, available to be drawn and moved around the screen.
+	Probably make this abstract later on? Then have seperate class for each sprite type. 
+	i.e. Player, enemyType1, enemyType2... 
 	*/
 class CharSprite
 {
@@ -12,10 +13,10 @@ private:
 	SDL_Rect toDraw;
 	SDL_Surface *sprite;
 	bool right;
-
 public:
 /**
 	Contructor!
+	@param Takes file location and start location values.
 	*/
 	CharSprite(char*, int, int);
 	~CharSprite(void);
@@ -24,8 +25,10 @@ public:
 	@return int - Will return -1 if there is an error, otherwise 0.
 	*/
 	int drawSprite(SDL_Surface*, int, int);
-	void moveSprite(void); //To Do
 	void updateSprite(bool []);
 	int CharSprite::drawSprite(SDL_Surface*);
+
+	//getStart();
+	//getCurrentLocation();
 };
 
