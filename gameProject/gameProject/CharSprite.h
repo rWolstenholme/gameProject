@@ -11,6 +11,8 @@ private:
 	SDL_Rect source;
 	SDL_Rect toDraw;
 	SDL_Surface *sprite;
+	bool right;
+
 public:
 /**
 	Contructor!
@@ -23,5 +25,7 @@ public:
 	*/
 	int drawSprite(SDL_Surface*, int, int);
 	void moveSprite(void); //To Do
+	void updateSprite(bool []);
+	int CharSprite::drawSprite(SDL_Surface*);
 };
 
