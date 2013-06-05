@@ -50,8 +50,8 @@ bool Level::drawSprites(SDL_Surface* drawTo) {
 	return true;
 }
 
-void Level::updateSprites(SDL_Event e) {
+void Level::updateSprites(bool keysdown[]) {
 	for (int i = 0; i < spriteList.size(); ++i) {
-		spriteList.at(i)->updateSprite(e);
+		spriteList.at(i)->updateSprite(keysdown);
 	}
 }

@@ -12,6 +12,7 @@ private:
 	SDL_Rect source;
 	SDL_Rect toDraw;
 	SDL_Surface *sprite;
+	bool right;
 public:
 /**
 	Contructor!
@@ -24,7 +25,7 @@ public:
 	@return int - Will return -1 if there is an error, otherwise 0.
 	*/
 	int drawSprite(SDL_Surface*, int, int);
-	void updateSprite(SDL_Event);
+	void updateSprite(bool []);
 	int CharSprite::drawSprite(SDL_Surface*);
 
 	//getStart();

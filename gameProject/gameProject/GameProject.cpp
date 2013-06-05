@@ -3,6 +3,7 @@
 int main(int argc, char *argv[])
 {
 	SDL_Surface *screen;
+	bool keysDown[323] = {false};	//Stores status of 323 supported keys
 
 	atexit(SDL_Quit);
 	if( SDL_Init(SDL_INIT_VIDEO) < 0 ) exit(1);
@@ -34,17 +35,21 @@ int main(int argc, char *argv[])
 	while (gameRunning)
 	{
 		SDL_FillRect(screen , NULL , 0xABCDEF);
-		
+
 		//numFrames++;
-		while( SDL_PollEvent( &event ) )
-		{
-			if (event.type == SDL_QUIT)
-			{
+		if (SDL_PollEvent(&event)){
+			if (event.type == SDL_QUIT){
 				gameRunning = false;
 			}
-			gameWorld->updateSprites(event);
-		} 
-		
+			else if (event.type == SDL_KEYDOWN){
+				keysDown[event.key.keysym.sym] = true;
+			} 
+			else if (event.type == SDL_KEYUP){
+				keysDown[event.key.keysym.sym] = false;
+			}
+		}
+		gameWorld->updateSprites(keysDown);
+
 		//Draw everything
 		gameWorld->drawLevel(screen);
 		gameWorld->drawSprites(screen);

@@ -28,7 +28,7 @@ public:
 	*/
 	bool drawSprites(SDL_Surface*);
 
-	void updateSprites(SDL_Event);
+	void updateSprites(bool []);
 
 	//Other Methods:
 	//Fill world(world objects).

@@ -33,13 +33,10 @@ int CharSprite::drawSprite(SDL_Surface* screen) {
 	return SDL_BlitSurface(sprite, &source, screen, &toDraw);
 }
 
-void CharSprite::updateSprite(SDL_Event e){
-	if(e.type == SDL_KEYUP ) { 
-		switch( e.key.keysym.sym ) { 
-		case SDLK_UP: toDraw.y -= 50; break; 
-		case SDLK_DOWN: toDraw.y += 50; break; 
-		case SDLK_LEFT: toDraw.x -= 50; break; 
-		case SDLK_RIGHT: toDraw.x += 50; break; 
-		} 
-	}
+void CharSprite::updateSprite(bool keysDown[323]){
+	if (keysDown[SDLK_LEFT]){toDraw.x -= 4;		right=false;}
+	if (keysDown[SDLK_RIGHT]){toDraw.x += 4;	right=true;}
+	if (keysDown[SDLK_UP]){toDraw.y -= 4;}
+	if (keysDown[SDLK_DOWN]){toDraw.y += 4;}
 }
+
